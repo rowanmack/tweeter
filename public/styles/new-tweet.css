@@ -1,0 +1,30 @@
+.new-tweet {
+  width: 100%;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: blanchedalmond;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+form textarea {
+  forced-color-adjust: none;
+  border: none;
+  border-bottom: 3px solid black;
+}
+form div {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+form label textarea 
+
+button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+}

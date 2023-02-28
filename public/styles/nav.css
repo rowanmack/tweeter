@@ -1,0 +1,37 @@
+
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+#logo {
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+ }
+
+ .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+ }
+
+ .fa-solid{
+  color: red;
+  padding: 0.5em;
+ }
+
+ .username{
+  color: #FFFFFF;
+ }

@@ -1,0 +1,12 @@
+header {
+  padding-top: 120px;
+  display: flex;
+  height: 520px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #d65d00;
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+}
+
