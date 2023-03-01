@@ -4,8 +4,14 @@
   border: 1mm solid #4C4E52;
 }
 
+.right-header p {
+  font-size: large;
+  font-weight: bold;
+  color: hsl(227, 84%, 83%);
+}
+
 .tweet-container:hover {
-  box-shadow: 5px 5px blue;
+  box-shadow: 5px 5px #839cf9;
 }
 
 article header {
