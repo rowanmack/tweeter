@@ -1,0 +1,31 @@
+
+.tweet-container {
+  padding: .75em;
+  border: 1mm solid #4C4E52;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  font-size: .75em;
+}
+
+article.tweet header .left-header {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+article.tweet header .right-header {
+  justify-content: flex-end;
+}
+
+.display-tweet {
+  border-bottom: 3px solid #4C4E52;
+}
+
+article footer {
+  font-size: 0.6em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
