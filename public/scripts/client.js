@@ -42,7 +42,7 @@ const createTweetElement = function(obj) {
     </header>
     <p class="display-tweet">${obj.content.text}</p>
     <footer>
-      <div class="date"><strong>${obj.created_at}</strong></div>
+      <div class="date"><strong>${moment(obj.created_at).fromNow()}</strong></div>
       <div class="icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -53,21 +53,27 @@ const createTweetElement = function(obj) {
   return $tweet;
 };
 
+const renderTweets = function(tweetsArr) {
+  const tweetContainer = $('.tweet-container')
+  for (const element of tweetsArr) {
+    const tweet = createTweetElement(element);
+    tweetContainer.prepend(tweet)
+  }
+};
+
 $(document).ready(function() {
 
   console.log("html loaded correctly!");
 
-  const renderTweets = function(tweetsArr) {
-    for (const element of tweetsArr) {
-      const tweet = createTweetElement(element);
-      $('.tweet-container').append(tweet)
-    }
-  };
+  renderTweets(tweetData);
 
-  renderTweets(tweetData)
-  // const tweet = createTweetElement(tweetData);
-  // console.log(tweet); // to see what it looks like
-  // $('.tweet-container').append(tweet);
+  $( "#tweet-form" ).submit(function( event ) {
+    event.preventDefault();
+    $.post( "/tweets", $( this ).serialize() )
+  });
+
 });
+
+
 
 
