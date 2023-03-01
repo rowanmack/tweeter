@@ -58,12 +58,16 @@ $(document).ready(function() {
   console.log("html loaded correctly!");
 
   const renderTweets = function(tweetsArr) {
-    for (const element of tweetsArr)
+    for (const element of tweetsArr) {
+      const tweet = createTweetElement(element);
+      $('.tweet-container').append(tweet)
+    }
   };
 
-  const tweet = createTweetElement(tweetData);
-  console.log(tweet); // to see what it looks like
-  $('.tweet-container').append(tweet);
+  renderTweets(tweetData)
+  // const tweet = createTweetElement(tweetData);
+  // console.log(tweet); // to see what it looks like
+  // $('.tweet-container').append(tweet);
 });
 
 

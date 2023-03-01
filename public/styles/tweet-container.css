@@ -1,7 +1,8 @@
 
-.tweet-container {
+.tweet {
   padding: .75em;
   border: 1mm solid #4C4E52;
+  margin: 10px;
 }
 
 .right-header p {
@@ -10,7 +11,7 @@
   color: hsl(227, 84%, 83%);
 }
 
-.tweet-container:hover {
+.tweet:hover {
   box-shadow: 5px 5px #839cf9;
 }
 
