@@ -20,6 +20,10 @@ article.tweet header .right-header {
 }
 
 .display-tweet {
+  font-weight: bold;
+  margin-bottom: 1mm;
+  font-size: medium;
+  padding-bottom: 2%;
   border-bottom: 3px solid #4C4E52;
 }
 
