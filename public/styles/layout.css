@@ -30,3 +30,9 @@ body {
   margin: auto;
   padding-bottom: 5%;
  }
+
+ .error-message {
+  display: flex;
+  justify-content: center;
+  border: solid red;
+ }

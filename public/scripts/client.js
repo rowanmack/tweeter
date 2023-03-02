@@ -4,31 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const tweetData = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ];
+$(".error").hide();
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function(obj) {
 
@@ -40,7 +22,7 @@ const createTweetElement = function(obj) {
       </div>
       <div class="right-header"><p>${obj.user.handle}</p></div>
     </header>
-    <p class="display-tweet">${obj.content.text}</p>
+    <p class="display-tweet">${escape(obj.content.text)}</p>
     <footer>
       <div class="date"><strong>${moment(obj.created_at).fromNow()}</strong></div>
       <div class="icons">
@@ -54,11 +36,16 @@ const createTweetElement = function(obj) {
 };
 
 const renderTweets = function(tweetsArr) {
-  const tweetContainer = $('.tweet-container')
+  const tweetContainer = $('.tweet-container').empty()
   for (const element of tweetsArr) {
     const tweet = createTweetElement(element);
     tweetContainer.prepend(tweet)
   }
+};
+
+const resetForm = () => {
+  $('#tweet-text').val("");
+  $('.counter').val(140);
 };
 
 $(document).ready(function() {
@@ -69,16 +56,26 @@ $(document).ready(function() {
 
   $( "#tweet-form" ).submit(function( event ) {
     event.preventDefault();
-    tweetText = $("#tweet-text").val()
-    if(tweetText.length < 1) {
-      alert("Your tweet is too few characters!")
-    } else if (tweetText.length > 140){
-      alert("Your tweet has too many characters!")
+    tweetText = $("#tweet-text").val().length
+
+    if(tweetText < 1) {
+      $('.error-message').text("Your tweet needs more characters!").slideDown('slow').delay(1500).slideUp('slow');
+
+    } else if (tweetText > 140){
+      $('.error-message').text("Your tweet has too many characters!").slideDown('slow').delay(1500).slideUp('slow');
+
     } else {
-       $.post( "/tweets", $( this ).serialize() )
+      $.ajax({
+        url:"/tweets",
+        type: "POST",
+        data: $(this).serialize(),
+      }).then((result)=>{
+        resetForm();
+        loadTweets();
+      })
     }
   });
-
+  
   function loadTweets() {
     $.ajax({
       method: 'GET',
