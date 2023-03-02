@@ -31,11 +31,27 @@ body {
   padding-bottom: 5%;
  }
 
- .error-message {
+ #error-message {
+  width: 90%;
   color: black;
-  font-weight: bold;
+  font-family: Bungee, cursive;
   display: flex;
-  background-color: rgb(148, 125, 125);
+  background-color: rgb(237, 173, 173);
   justify-content: center;
   border: solid 3px red;
+  margin-bottom: 25px;
+ }
+
+ @media only screen and (min-width: 1024px) {
+
+  body {
+    display: flex;
+  }
+
+  main {
+    width: 50%;
+    margin-top: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
  }

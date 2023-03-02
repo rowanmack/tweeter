@@ -1,6 +1,3 @@
-
-
-
 nav {
   display: flex;
   align-items: center;
@@ -15,7 +12,7 @@ nav {
   width: 100%;
 }
 
-#logo {
+.logo {
   font-family: 'Bungee', cursive;
   font-size: 40px;
  }
@@ -24,14 +21,18 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
  }
 
  .arrows {
+  padding-top: 5px;
   color: red;
-  padding: 0.5em;
+  padding: none;
  }
 
- .username{
-  color: #FFFFFF;
+
+ @media only screen and (max-width: 1024px) {
+  nav {
+    background-color: transparent;
+  }
  }
