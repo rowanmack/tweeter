@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -48,7 +50,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
         <section class="new-tweet">
-            <div class="error-message"></div>
+            <div id="error-message"></div>
           <form id="tweet-form" method="POST">
             <label for="tweet-text"><strong>What are you humming about?</strong></label>
             <textarea name="text" id="tweet-text"></textarea>

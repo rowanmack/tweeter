@@ -50,7 +50,7 @@ $(document).ready(function() {
 
   console.log("html loaded correctly!");
 
-  $(".error-message").hide();
+  $("#error-message").hide();
 
   // renderTweets(tweetData);
 
@@ -59,10 +59,10 @@ $(document).ready(function() {
     tweetText = $("#tweet-text").val().length
 
     if(tweetText < 1) {
-      $('.error-message').text("Your tweet needs more characters!").slideDown('slow').delay(1500).slideUp('slow');
+      $('#error-message').text("Your tweet is empty").slideDown('slow').delay(1000).slideUp('slow');
 
     } else if (tweetText > 140){
-      $('.error-message').text("Your tweet has too many characters!").slideDown('slow').delay(1500).slideUp('slow');
+      $('#error-message').text("Your tweet has too many characters!").slideDown('slow').delay(1000).slideUp('slow');
 
     } else {
       $.ajax({
