@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(".error").hide();
-
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -51,6 +49,8 @@ const resetForm = () => {
 $(document).ready(function() {
 
   console.log("html loaded correctly!");
+
+  $(".error-message").hide();
 
   // renderTweets(tweetData);
 
