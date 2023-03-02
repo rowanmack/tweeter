@@ -69,7 +69,14 @@ $(document).ready(function() {
 
   $( "#tweet-form" ).submit(function( event ) {
     event.preventDefault();
-    $.post( "/tweets", $( this ).serialize() )
+    tweetText = $("#tweet-text").val()
+    if(tweetText.length < 1) {
+      alert("Your tweet is too few characters!")
+    } else if (tweetText.length > 140){
+      alert("Your tweet has too many characters!")
+    } else {
+       $.post( "/tweets", $( this ).serialize() )
+    }
   });
 
   function loadTweets() {
@@ -77,8 +84,10 @@ $(document).ready(function() {
       method: 'GET',
       url: '/tweets',
       success: (response) => {
-        // console.log(reponse)
         renderTweets(response)
+      },
+      error: (err) => {
+        console.log(err)
       }
     })
   };
