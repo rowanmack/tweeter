@@ -32,7 +32,10 @@ body {
  }
 
  .error-message {
+  color: black;
+  font-weight: bold;
   display: flex;
+  background-color: rgb(148, 125, 125);
   justify-content: center;
-  border: solid red;
+  border: solid 3px red;
  }

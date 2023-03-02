@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Costanza",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@GeorgeC"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "You know we're living in a society!"
     },
-    "created_at": 1677552673272
+    "created_at": 1677562651949
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Kramer",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "handle": "@Cosmo"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "Here's to feeling good all the time"
     },
-    "created_at": 1677639073272
+    "created_at": 1677649051949
   }
 ]
