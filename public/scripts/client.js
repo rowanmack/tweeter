@@ -5,7 +5,7 @@
  */
 
 //function to inhibit xss:
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -34,10 +34,10 @@ const createTweetElement = function(obj) {
 };
 
 const renderTweets = function(tweetsArr) {
-  const tweetContainer = $('.tweet-container').empty()
+  const tweetContainer = $('.tweet-container').empty();
   for (const element of tweetsArr) {
     const tweet = createTweetElement(element);
-    tweetContainer.prepend(tweet)
+    tweetContainer.prepend(tweet);
   }
 };
 
@@ -48,47 +48,45 @@ const resetForm = () => {
 
 $(document).ready(function() {
 
-  console.log("html loaded correctly!");
-
   $("#error-message").hide();
 
   // renderTweets(tweetData);
 
-  $( "#tweet-form" ).submit(function( event ) {
+  $("#tweet-form").submit(function(event) {
     event.preventDefault();
-    tweetText = $("#tweet-text").val().length
+    tweetText = $("#tweet-text").val().length;
 
-    if(tweetText < 1) {
+    if (tweetText < 1) {
       $('#error-message').text("your tweet is empty").slideDown('slow').delay(1500).slideUp('slow');
 
-    } else if (tweetText > 140){
+    } else if (tweetText > 140) {
       $('#error-message').text("too many characters!").slideDown('slow').delay(1500).slideUp('slow');
 
     } else {
       $.ajax({
-        url:"/tweets",
+        url: "/tweets",
         type: "POST",
         data: $(this).serialize(),
-      }).then((result)=>{
+      }).then((result) => {
         resetForm();
         loadTweets();
-      })
+      });
     }
   });
-  
+
   function loadTweets() {
     $.ajax({
       method: 'GET',
       url: '/tweets',
       success: (response) => {
-        renderTweets(response)
+        renderTweets(response);
       },
       error: (err) => {
-        console.log(err)
+        console.log(err);
       }
-    })
-  };
-  loadTweets()
+    });
+  }
+  loadTweets();
 });
 
 
