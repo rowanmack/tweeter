@@ -31,7 +31,7 @@ nav {
   position: relative;
   animation: bounce 1.25s ease infinite alternate-reverse;
  }
-
+/* arrows bouncing effect */
  @keyframes bounce {
   0% {
     top: -5px;
@@ -40,7 +40,6 @@ nav {
     top: 5px;
   }
 }
-
 
  @media only screen and (max-width: 1024px) {
   nav {

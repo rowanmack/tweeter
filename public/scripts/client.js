@@ -50,11 +50,12 @@ $(document).ready(function() {
 
   $("#error-message").hide();
 
-  // renderTweets(tweetData);
-
   $("#tweet-form").submit(function(event) {
     event.preventDefault();
     tweetText = $("#tweet-text").val().length;
+
+    //Error messages: will slidedown and appear for 1.5 seconds and then slide back up.
+    //Assumes error was accidental, doesn't require user to submit a tweet if they accidentally hit submit button. 
 
     if (tweetText < 1) {
       $('#error-message').text("your tweet is empty").slideDown('slow').delay(1500).slideUp('slow');

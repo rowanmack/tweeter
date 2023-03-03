@@ -61,6 +61,7 @@ article footer {
   align-items: center;
 }
 
+/* tweet icons hover states */
 article footer .fa-flag:hover{
   color: burlywood;
 }
