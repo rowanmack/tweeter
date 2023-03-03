@@ -28,7 +28,18 @@ nav {
   padding-top: 5px;
   color: red;
   padding: none;
+  position: relative;
+  animation: bounce 1.25s ease infinite alternate-reverse;
  }
+
+ @keyframes bounce {
+  0% {
+    top: -5px;
+  }
+  100% {
+    top: 5px;
+  }
+}
 
 
  @media only screen and (max-width: 1024px) {

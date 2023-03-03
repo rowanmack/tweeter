@@ -34,7 +34,7 @@ form div {
   font-family: 'Bungee', cursive;
 }
 
-button {
+.button-submit {
   border: none;
   padding-top: 5px;
   background-color: #4056A1;
@@ -44,12 +44,3 @@ button {
 button:hover {
   background-color: hsl(226, 58%, 33%);
 }
-
-#error-message {
-  color: black;
-  font-family: Bungee, cursive;
-  display: flex;
-  background-color: rgb(237, 173, 173);
-  justify-content: center;
-  border: solid 3px red;
- }

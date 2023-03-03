@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//function to inhibit xss:
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -11,8 +12,7 @@ const escape = function (str) {
 };
 
 const createTweetElement = function(obj) {
-
-  const $tweet = $(`<article class="tweet">
+  const $newTweet = $(`<article class="tweet">
     <header>
       <div class="left-header">
         <img src=${obj.user.avatars}>
@@ -30,7 +30,7 @@ const createTweetElement = function(obj) {
       </div>
     </footer>
     </article>`);
-  return $tweet;
+  return $newTweet;
 };
 
 const renderTweets = function(tweetsArr) {
